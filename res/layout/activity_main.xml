@@ -1,68 +1,67 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal" >
 
-<EditText
-    tools:id="@+id/digits"
-    tools:layout_width="wrap_content"
-    tools:layout_height="wrap_content"
-    tools:layout_alignParentLeft="true"
-    tools:layout_alignParentTop="true"
-    tools:layout_marginTop="190dp"
-    tools:ems="10"
-    tools:inputType="number"
-    tools:text="8" >
+    <Button
+        tools:id="@+id/upButton"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_alignTop="@+id/textView1"
+        tools:layout_marginLeft="17dp"
+        tools:layout_toRightOf="@+id/digits"
+        tools:text="↑" />
 
-    <requestFocus />
-</EditText>
+    <Button
+        tools:id="@+id/downButton"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_below="@+id/upButton"
+        tools:layout_marginLeft="17dp"
+        tools:layout_toRightOf="@+id/digits"
+        tools:text="↓" />
 
-<TextView
-    tools:id="@+id/textView1"
-    tools:layout_width="wrap_content"
-    tools:layout_height="wrap_content"
-    tools:layout_alignBottom="@+id/digits"
-    tools:layout_alignParentLeft="true"
-    tools:layout_alignRight="@+id/digits"
-    tools:layout_marginBottom="38dp"
-    tools:text="Password Length"
-    tools:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        tools:id="@+id/textView2"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_alignLeft="@+id/digits"
+        tools:layout_alignParentBottom="true"
+        tools:layout_alignRight="@+id/downButton"
+        tools:layout_marginBottom="71dp"
+        tools:text="Type or use the arrow buttons to change the number of digits in the generated password."
+        tools:textAppearance="?android:attr/textAppearanceMedium" />
 
-<Button
-    tools:id="@+id/downButton"
-    tools:layout_width="wrap_content"
-    tools:layout_height="wrap_content"
-    tools:layout_alignLeft="@+id/upButton"
-    tools:layout_below="@+id/digits"
-    tools:text="↓" />
+    <TextView
+        tools:id="@+id/textView1"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_above="@+id/digits"
+        tools:layout_alignLeft="@+id/button1"
+        tools:layout_marginBottom="14dp"
+        tools:text="Password Length:"
+        tools:textAppearance="?android:attr/textAppearanceMedium" />
 
-<Button
-    tools:id="@+id/upButton"
-    tools:layout_width="wrap_content"
-    tools:layout_height="wrap_content"
-    tools:layout_alignBaseline="@+id/textView1"
-    tools:layout_alignBottom="@+id/textView1"
-    tools:layout_alignParentRight="true"
-    tools:text="↑" />
+    <EditText
+        tools:id="@+id/digits"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_alignLeft="@+id/textView1"
+        tools:layout_alignRight="@+id/textView1"
+        tools:layout_centerVertical="true"
+        tools:ems="10"
+        tools:inputType="number"
+        tools:text="8" />
 
-<TextView
-    tools:id="@+id/textView2"
-    tools:layout_width="wrap_content"
-    tools:layout_height="wrap_content"
-    tools:layout_alignParentBottom="true"
-    tools:layout_centerHorizontal="true"
-    tools:text="Either type or use the arrows to increase or decrease the password length"
-    tools:textAppearance="?android:attr/textAppearanceMedium" />
-
-<Button
-    tools:id="@+id/button1"
-    tools:layout_width="wrap_content"
-    tools:layout_height="wrap_content"
-    tools:layout_alignParentTop="true"
-    tools:layout_centerHorizontal="true"
-    tools:layout_marginTop="47dp"
-    tools:text="GENERATE PASSWORD" />
+    <Button
+        tools:id="@+id/button1"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_above="@+id/upButton"
+        tools:layout_centerHorizontal="true"
+        tools:layout_marginBottom="54dp"
+        tools:text="GENERATE PASSWORD" />
 
 </RelativeLayout>
