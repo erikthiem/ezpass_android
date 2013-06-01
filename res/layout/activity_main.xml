@@ -62,6 +62,7 @@
         tools:layout_above="@+id/upButton"
         tools:layout_centerHorizontal="true"
         tools:layout_marginBottom="54dp"
+        tools:onClick="generatePassword"
         tools:text="GENERATE PASSWORD" />
 
 </RelativeLayout>

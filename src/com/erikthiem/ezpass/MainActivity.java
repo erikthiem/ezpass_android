@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends Activity {
-	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+	public final static String EXTRA_MESSAGE = "com.erikthiem.ezpass.MESSAGE";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void generatePassword(View view) {
-		Intent intent = new Intent(this, GeneratePasswordActivity.class);
+		Intent generatePassword = new Intent(this, GeneratePasswordActivity.class);
 		EditText editText = (EditText) findViewById(R.id.digits);
 		
 		// gets the number of digits that the user entered and
@@ -34,8 +34,8 @@ public class MainActivity extends Activity {
 		// this stops the program from continuing (and throwing an error)
 		// if the user has not entered anything
 		if (digits.length() > 0) {
-			intent.putExtra(EXTRA_MESSAGE, digits);
-			startActivity(intent);
+			generatePassword.putExtra(EXTRA_MESSAGE, digits);
+			startActivity(generatePassword);
 		}
 		
 	}
