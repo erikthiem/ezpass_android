@@ -12,6 +12,7 @@
         tools:layout_alignTop="@+id/textView1"
         tools:layout_marginLeft="17dp"
         tools:layout_toRightOf="@+id/digits"
+        tools:onClick="increaseDigitsByOne"
         tools:text="↑" />
 
     <Button
@@ -21,6 +22,7 @@
         tools:layout_below="@+id/upButton"
         tools:layout_marginLeft="17dp"
         tools:layout_toRightOf="@+id/digits"
+        tools:onClick="decreaseDigitsByOne"
         tools:text="↓" />
 
     <TextView

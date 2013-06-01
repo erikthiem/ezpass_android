@@ -25,11 +25,11 @@ public class MainActivity extends Activity {
 	
 	public void generatePassword(View view) {
 		Intent generatePassword = new Intent(this, GeneratePasswordActivity.class);
-		EditText editText = (EditText) findViewById(R.id.digits);
+		EditText digits_edittext = (EditText) findViewById(R.id.digits);
 		
 		// gets the number of digits that the user entered and
 		// saved it to a string
-		String digits = editText.getText().toString();
+		String digits = digits_edittext.getText().toString();
 		
 		// this stops the program from continuing (and throwing an error)
 		// if the user has not entered anything
@@ -37,7 +37,40 @@ public class MainActivity extends Activity {
 			generatePassword.putExtra(EXTRA_MESSAGE, digits);
 			startActivity(generatePassword);
 		}
+	}
+	
+	public void increaseDigitsByOne(View view) {
+		// get the current value of the digits
+		EditText digits_edittext = (EditText) findViewById(R.id.digits);
+		int current_digits = Integer.parseInt(digits_edittext.getText().toString());
+		int desired_digits;
 		
+		// increase the value of the digits only if doing so will not put the digits over the maximum allowed digits
+		if (current_digits < 89) {
+			desired_digits = current_digits + 1;
+		} else {
+			desired_digits = current_digits;
+		}
+		
+		// set the new digits
+		digits_edittext.setText(Integer.toString(desired_digits));
+		
+	}
+	
+	public void decreaseDigitsByOne(View view) {
+		EditText digits_edittext = (EditText) findViewById(R.id.digits);
+		int current_digits = Integer.parseInt(digits_edittext.getText().toString());
+		int desired_digits;
+		
+		// decrease the value of the digits only if doing so will not put the digits under 1
+		if (current_digits > 1) {
+			desired_digits = current_digits - 1;
+		} else {
+			desired_digits = current_digits;
+		}
+		
+		// set the new digits
+		digits_edittext.setText(Integer.toString(desired_digits));
 	}
 
 }
