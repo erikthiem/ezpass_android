@@ -22,6 +22,13 @@ public class GeneratePasswordActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		generateAndDisplayPassword();
+		
+	}
+	
+	public void generateAndDisplayPassword()
+	{
+		
 		setContentView(R.layout.activity_generate_password);
 		
 		// Get the digits from the intent and convert it to an integer
@@ -65,7 +72,6 @@ public class GeneratePasswordActivity extends Activity {
 		
 		// Show the Up button in the action bar.
 		setupActionBar();
-		
 	}
 	
 	public void onClick(View view)
@@ -74,6 +80,9 @@ public class GeneratePasswordActivity extends Activity {
 	    {
 	        case R.id.returnToStart:
 	        	finish();
+	        	break;
+	        case R.id.reGenerate:
+	        	generateAndDisplayPassword();
 	        	break;
 	    }
 

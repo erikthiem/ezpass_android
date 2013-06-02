@@ -29,7 +29,7 @@ public final class R {
         public static final int digits=0x7f080005;
         public static final int downButton=0x7f080006;
         public static final int generatedPasswordText=0x7f080002;
-        public static final int reGenerateButton=0x7f080001;
+        public static final int reGenerate=0x7f080001;
         public static final int returnToStart=0x7f080000;
         public static final int textView1=0x7f080004;
         public static final int textView2=0x7f080007;
