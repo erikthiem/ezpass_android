@@ -10,14 +10,19 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class GeneratePasswordActivity extends Activity {
+	
+
 
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_generate_password);
 		
 		// Get the digits from the intent and convert it to an integer
 		Intent intent = getIntent();
@@ -45,20 +50,35 @@ public class GeneratePasswordActivity extends Activity {
 			// Convert the array of generated characters back to a string
 			password = new String(password_array);
 		} else {
-			password = "The password length must be less than 90. Please go back and try again.";
+			password = "The password length must be less than 90 digits. Please go back and try again.";
 		}
 		
-		// Create the text view to display the password
-		TextView textView = new TextView(this);
-		textView.setTextSize(40);
+		
+		
+		// Set the text view to display the password
+		TextView textView = (TextView)findViewById(R.id.generatedPasswordText);
+		textView.setTextSize(32);
 		textView.setText(password);
 		
 		// Set the text view as the activity layout
-		setContentView(textView);
+		//setContentView(textView);
 		
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
 	}
+	
+	public void onClick(View view)
+	{
+	    switch (view.getId())
+	    {
+	        case R.id.returnToStart:
+	        	finish();
+	        	break;
+	    }
+
+	}
+
 
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.

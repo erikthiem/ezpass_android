@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends Activity {
-	public final static String EXTRA_MESSAGE = "com.erikthiem.ezpass.MESSAGE";
+	public final static String EXTRA_MESSAGE = "com.erikthiem.ezpass.DIGITS";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
