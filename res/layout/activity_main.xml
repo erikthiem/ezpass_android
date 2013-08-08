@@ -26,17 +26,6 @@
         tools:text="↓" />
 
     <TextView
-        tools:id="@+id/textView2"
-        tools:layout_width="wrap_content"
-        tools:layout_height="wrap_content"
-        tools:layout_alignLeft="@+id/digits"
-        tools:layout_alignParentBottom="true"
-        tools:layout_alignRight="@+id/downButton"
-        tools:layout_marginBottom="71dp"
-        tools:text="Type or use the arrow buttons to change the number of digits in the generated password."
-        tools:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         tools:id="@+id/textView1"
         tools:layout_width="wrap_content"
         tools:layout_height="wrap_content"
@@ -66,5 +55,38 @@
         tools:layout_marginBottom="54dp"
         tools:onClick="generatePassword"
         tools:text="GENERATE PASSWORD" />
+
+    <CheckBox
+        tools:id="@+id/checkBox_special"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_alignParentBottom="true"
+        tools:layout_centerHorizontal="true"
+        tools:text="Special Characters" 
+        />
+
+    <CheckBox
+        tools:id="@+id/checkBox_numbers"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_above="@+id/checkBox_special"
+        tools:layout_alignLeft="@+id/checkBox_special"
+        tools:text="Numbers" />
+
+    <CheckBox
+        tools:id="@+id/checkBox_uppercase"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_above="@+id/checkBox_numbers"
+        tools:layout_alignLeft="@+id/checkBox_numbers"
+        tools:text="Uppercase Letters" />
+
+    <CheckBox
+        tools:id="@+id/checkBox_lowercase"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_above="@+id/checkBox_uppercase"
+        tools:layout_alignLeft="@+id/checkBox_uppercase"
+        tools:text="Lowercase Letters" />
 
 </RelativeLayout>

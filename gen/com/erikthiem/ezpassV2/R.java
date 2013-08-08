@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.erikthiem.ezpass;
+package com.erikthiem.ezpassV2;
 
 public final class R {
     public static final class attr {
@@ -24,15 +24,18 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080009;
-        public static final int button1=0x7f080008;
+        public static final int action_settings=0x7f08000c;
+        public static final int button1=0x7f080007;
+        public static final int checkBox_lowercase=0x7f08000b;
+        public static final int checkBox_numbers=0x7f080009;
+        public static final int checkBox_special=0x7f080008;
+        public static final int checkBox_uppercase=0x7f08000a;
         public static final int digits=0x7f080005;
         public static final int downButton=0x7f080006;
         public static final int generatedPasswordText=0x7f080002;
         public static final int reGenerate=0x7f080001;
         public static final int returnToStart=0x7f080000;
         public static final int textView1=0x7f080004;
-        public static final int textView2=0x7f080007;
         public static final int upButton=0x7f080003;
     }
     public static final class layout {
