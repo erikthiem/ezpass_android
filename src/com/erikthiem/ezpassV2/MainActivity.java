@@ -29,11 +29,13 @@ public class MainActivity extends Activity {
 		CheckBox uppercase_letters = (CheckBox) findViewById(R.id.checkBox_uppercase);
 		CheckBox numbers = (CheckBox) findViewById(R.id.checkBox_numbers);
 		CheckBox special_characters = (CheckBox) findViewById(R.id.checkBox_special);
+		EditText digits = (EditText) findViewById(R.id.digits);
 		
 		lowercase_letters.setChecked(state.getLowercaseCheckboxValue());
 		uppercase_letters.setChecked(state.getUppercaseCheckboxValue());
 		numbers.setChecked(state.getNumbersCheckboxValue());
 		special_characters.setChecked(state.getSpecialCheckboxValue());
+		digits.setText(Integer.toString(state.getPasswordDigits()));
 	}
 
 	@Override
@@ -63,12 +65,13 @@ public class MainActivity extends Activity {
 		boolean numbers_checked = numbers.isChecked();
 		boolean special_characters_checked = special_characters.isChecked();
 		
-		// save the checkbox booleans to the global state
+		// save the checkbox booleans and the number of digits to the global state
 		GlobalState state = ((GlobalState) getApplicationContext());
 		state.setLowercaseCheckboxValue(lowercase_letters_checked);
 		state.setUppercaseCheckboxValue(uppercase_letters_checked);
 		state.setNumbersCheckboxValue(numbers_checked);
 		state.setSpecialCheckboxValue(special_characters_checked);
+		state.setPasswordDigits(Integer.parseInt(digits));
 		
 		// this stops the program from continuing (and throwing an error)
 		// if the user has not entered anything

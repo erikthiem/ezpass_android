@@ -9,7 +9,7 @@ public class GlobalState extends Application {
 	private boolean mainactivity_uppercase_selected;
 	private boolean mainactivity_numbers_selected;
 	private boolean mainactivity_special_selected;
-	
+	private int password_digits;
 	
 	
 	// Set initial values
@@ -20,6 +20,7 @@ public class GlobalState extends Application {
 		this.mainactivity_uppercase_selected = true;
 		this.mainactivity_numbers_selected = true;
 		this.mainactivity_special_selected = true;
+		this.password_digits = 8;
 	}
 	
 	
@@ -28,22 +29,27 @@ public class GlobalState extends Application {
 	
 	public boolean getLowercaseCheckboxValue()
 	{
-		return mainactivity_lowercase_selected;
+		return this.mainactivity_lowercase_selected;
 	}
 	
 	public boolean getUppercaseCheckboxValue()
 	{
-		return mainactivity_uppercase_selected;
+		return this.mainactivity_uppercase_selected;
 	}
 	
 	public boolean getNumbersCheckboxValue()
 	{
-		return mainactivity_numbers_selected;
+		return this.mainactivity_numbers_selected;
 	}
 	
 	public boolean getSpecialCheckboxValue()
 	{
-		return mainactivity_special_selected;
+		return this.mainactivity_special_selected;
+	}
+	
+	public int getPasswordDigits()
+	{
+		return this.password_digits;
 	}
 	
 	
@@ -68,6 +74,11 @@ public class GlobalState extends Application {
 	public void setSpecialCheckboxValue(boolean value)
 	{
 		this.mainactivity_special_selected = value;
+	}
+	
+	public void setPasswordDigits(int digits)
+	{
+		this.password_digits = digits;
 	}
 	
 }
