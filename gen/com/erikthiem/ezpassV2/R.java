@@ -31,13 +31,13 @@ public final class R {
         public static final int checkBox_uppercase=0x7f08000b;
         public static final int copyToClipboard=0x7f080003;
         public static final int digits=0x7f080006;
-        public static final int downButton=0x7f080007;
+        public static final int downButton=0x7f080004;
         public static final int generatePasswordButton=0x7f080008;
         public static final int generatedPasswordText=0x7f080002;
-        public static final int passwordLengthText=0x7f080005;
+        public static final int passwordLengthText=0x7f080007;
         public static final int reGenerate=0x7f080001;
         public static final int returnToStart=0x7f080000;
-        public static final int upButton=0x7f080004;
+        public static final int upButton=0x7f080005;
     }
     public static final class layout {
         public static final int activity_generate_password=0x7f030000;
