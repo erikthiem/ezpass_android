@@ -6,18 +6,8 @@
     android:orientation="horizontal" >
 
     <Button
-        tools:id="@+id/upButton"
-        tools:layout_width="wrap_content"
-        tools:layout_height="wrap_content"
-        tools:layout_alignTop="@+id/textView1"
-        tools:layout_marginLeft="17dp"
-        tools:layout_toRightOf="@+id/digits"
-        tools:onClick="increaseDigitsByOne"
-        tools:text="↑" />
-
-    <Button
         tools:id="@+id/downButton"
-        tools:layout_width="wrap_content"
+        tools:layout_width="80dp"
         tools:layout_height="wrap_content"
         tools:layout_below="@+id/upButton"
         tools:layout_marginLeft="17dp"
@@ -26,44 +16,14 @@
         tools:text="↓" />
 
     <TextView
-        tools:id="@+id/textView1"
+        tools:id="@+id/passwordLengthText"
         tools:layout_width="wrap_content"
         tools:layout_height="wrap_content"
         tools:layout_above="@+id/digits"
-        tools:layout_alignLeft="@+id/button1"
+        tools:layout_alignLeft="@+id/generatePasswordButton"
         tools:layout_marginBottom="14dp"
         tools:text="Password Length:"
         tools:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        tools:id="@+id/digits"
-        tools:layout_width="wrap_content"
-        tools:layout_height="wrap_content"
-        tools:layout_alignLeft="@+id/textView1"
-        tools:layout_alignRight="@+id/textView1"
-        tools:layout_centerVertical="true"
-        tools:ems="10"
-        tools:inputType="number"
-        tools:text="8" />
-
-    <Button
-        tools:id="@+id/button1"
-        tools:layout_width="wrap_content"
-        tools:layout_height="wrap_content"
-        tools:layout_above="@+id/upButton"
-        tools:layout_centerHorizontal="true"
-        tools:layout_marginBottom="54dp"
-        tools:onClick="generatePassword"
-        tools:text="GENERATE PASSWORD" />
-
-    <CheckBox
-        tools:id="@+id/checkBox_special"
-        tools:layout_width="wrap_content"
-        tools:layout_height="wrap_content"
-        tools:layout_alignParentBottom="true"
-        tools:layout_centerHorizontal="true"
-        tools:text="Special Characters" 
-        />
 
     <CheckBox
         tools:id="@+id/checkBox_numbers"
@@ -88,5 +48,49 @@
         tools:layout_above="@+id/checkBox_uppercase"
         tools:layout_alignLeft="@+id/checkBox_uppercase"
         tools:text="Lowercase Letters" />
+
+    <CheckBox
+        tools:id="@+id/checkBox_special"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_alignParentBottom="true"
+        tools:layout_centerHorizontal="true"
+        tools:layout_marginBottom="5dp"
+        tools:text="Special Characters" />
+
+    <Button
+        tools:id="@+id/generatePasswordButton"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_alignParentTop="true"
+        tools:layout_centerHorizontal="true"
+        tools:layout_marginTop="10dp"
+        tools:onClick="generatePassword"
+        tools:text="GENERATE PASSWORD"
+        tools:textStyle="bold" />
+
+    <EditText
+        tools:id="@+id/digits"
+        tools:layout_width="wrap_content"
+        tools:layout_height="wrap_content"
+        tools:layout_above="@+id/checkBox_lowercase"
+        tools:layout_alignLeft="@+id/passwordLengthText"
+        tools:layout_alignRight="@+id/passwordLengthText"
+        tools:layout_marginBottom="20dp"
+        tools:ems="10"
+        tools:inputType="number"
+        tools:text="8" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        tools:id="@+id/upButton"
+        tools:layout_width="80dp"
+        tools:layout_height="wrap_content"
+        tools:layout_above="@+id/digits"
+        tools:layout_alignLeft="@+id/downButton"
+        tools:onClick="increaseDigitsByOne"
+        tools:text="↑" />
 
 </RelativeLayout>

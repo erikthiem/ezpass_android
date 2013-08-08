@@ -5,6 +5,7 @@ import java.util.Random;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,10 +13,11 @@ import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GeneratePasswordActivity extends Activity {
 	
-
+	private String generated_password;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -41,7 +43,6 @@ public class GeneratePasswordActivity extends Activity {
 		boolean include_numbers = intent.getBooleanExtra(MainActivity.NUMBERS, true);
 		boolean include_special = intent.getBooleanExtra(MainActivity.SPECIAL, true);
 
-		String password = "";
 		String error = "";
 		
 		if (!include_lowercase && !include_uppercase && !include_numbers && !include_special)
@@ -89,7 +90,7 @@ public class GeneratePasswordActivity extends Activity {
 				}
 				
 				// Convert the array of generated characters back to a string
-				password = new String(password_array);
+				this.generated_password = new String(password_array);
 			} else {
 				// This is used here as an error message
 				error = "The password length must be between 1 and 100 digits. Please go back and try again.";
@@ -103,7 +104,7 @@ public class GeneratePasswordActivity extends Activity {
 		textView.setTextSize(32);
 		if (error.isEmpty())
 		{
-		textView.setText(password);
+			textView.setText(this.generated_password);
 		} else {
 			textView.setText(error);
 		}
@@ -115,6 +116,26 @@ public class GeneratePasswordActivity extends Activity {
 		setupActionBar();
 	}
 	
+	@SuppressWarnings("deprecation")
+	@SuppressLint("NewApi")
+	public void copyPasswordToClipboard()
+	{
+		// Copy the password differently based on what API level the user is using
+		int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+		
+		if (currentapiVersion >= android.os.Build.VERSION_CODES.HONEYCOMB){
+		     android.content.ClipboardManager clipboard =  (android.content.ClipboardManager) getSystemService(CLIPBOARD_SERVICE); 
+		        ClipData clip = ClipData.newPlainText("label", this.generated_password);
+		        clipboard.setPrimaryClip(clip); 
+		} else{
+			android.text.ClipboardManager clipboard = (android.text.ClipboardManager)getSystemService(CLIPBOARD_SERVICE); 
+		    clipboard.setText(this.generated_password);
+		}
+	    
+	    Toast.makeText(getApplicationContext(), "Password copied to clipboard", Toast.LENGTH_SHORT).show();
+
+	}
+	
 	public void onClick(View view)
 	{
 	    switch (view.getId())
@@ -122,8 +143,13 @@ public class GeneratePasswordActivity extends Activity {
 	        case R.id.returnToStart:
 	        	finish();
 	        	break;
+	        	
 	        case R.id.reGenerate:
 	        	generateAndDisplayPassword();
+	        	break;
+	        	
+	        case R.id.copyToClipboard:
+	        	copyPasswordToClipboard();
 	        	break;
 	    }
 

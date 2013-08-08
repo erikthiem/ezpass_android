@@ -1,8 +1,10 @@
 package com.erikthiem.ezpassV2;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.Menu;
 import android.view.View;
 import android.widget.CheckBox;
@@ -46,6 +48,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void generatePassword(View view) {
+		
 		Intent generatePassword = new Intent(this, GeneratePasswordActivity.class);
 		EditText digits_edittext = (EditText) findViewById(R.id.digits);
 		
@@ -86,6 +89,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void increaseDigitsByOne(View view) {
+		
 		// get the current value of the digits
 		EditText digits_edittext = (EditText) findViewById(R.id.digits);
 		int current_digits = Integer.parseInt(digits_edittext.getText().toString());
